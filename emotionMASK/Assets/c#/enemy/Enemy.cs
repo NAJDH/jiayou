@@ -139,100 +139,6 @@ public class Enemy : MonoBehaviour, IDamageable
         //UpdateFormLogic();
         #endregion
     }
-
-
-    #region
-    //private void InitializeForms()
-    //{
-    //    // 注册所有形态
-    //    availableForms.Add(MaskType.Joy, new EnemyJoyForm(this, stateMachine));
-    //    availableForms.Add(MaskType.Anger, new EnemyAngerForm(this, stateMachine));
-    //    // 添加更多形态...
-    //}
-
-    //private void UpdateFormLogic()
-    //{
-    //    // 定时变换
-    //    if (Time.time > lastTransformTime + transformCooldown)
-    //    {
-    //        TryRandomTransform();
-    //    }
-    //}
-
-    //// 形态切换核心方法
-    //public void TransformTo(MaskType newForm)
-    //{
-    //    if (currentForm == newForm) return;
-    //    if (Time.time < lastTransformTime + transformCooldown) return;
-
-    //    Debug.Log($"Enemy transforming from {currentForm} to {newForm}");
-
-    //    // 进入变换状态
-    //    stateMachine.ChangeState(transformState);
-
-    //    // 设置变换目标
-    //    transformState.SetTargetForm(newForm);
-
-    //    lastTransformTime = Time.time;
-    //}
-
-    //// 实际完成变换（由动画事件调用）
-    //public void CompleteTransform(MaskType newForm)
-    //{
-    //    // 更新当前形态
-    //    currentForm = newForm;
-
-    //    // 应用新形态属性
-    //    if (availableForms.ContainsKey(newForm))
-    //    {
-    //        currentFormInstance = availableForms[newForm];
-    //        currentFormInstance.EnterForm();
-    //    }
-
-    //    // 播放变换效果
-    //    PlayTransformEffect(newForm);
-
-    //    // 返回空闲状态
-    //    stateMachine.ChangeState(idleState);
-    //}
-
-    //private void PlayTransformEffect(MaskType form)
-    //{
-    //    // 查找对应的视觉效果
-    //    foreach (var visual in formVisuals)
-    //    {
-    //        if (visual.formType == form)
-    //        {
-    //            if (visual.transformEffect != null)
-    //            {
-    //                Instantiate(visual.transformEffect, transform.position, Quaternion.identity);
-    //            }
-    //            // 播放音效
-    //            // AudioManager.PlaySound(visual.transformSound);
-    //            break;
-    //        }
-    //    }
-    //}
-
-    //// 随机变换
-    //private void TryRandomTransform()
-    //{
-    //    // 排除当前形态，从其他中随机选择
-    //    List<MaskType> availableForms = new List<MaskType>();
-    //    foreach (MaskType type in System.Enum.GetValues(typeof(MaskType)))
-    //    {
-    //        if (type != currentForm)
-    //            availableForms.Add(type);
-    //    }
-
-    //    if (availableForms.Count > 0)
-    //    {
-    //        MaskType randomForm = availableForms[Random.Range(0, availableForms.Count)];
-    //        TransformTo(randomForm);
-    //    }
-    //}
-    #endregion
-
     //受击相关
     public virtual void TakeDamage(float damage)
     {
@@ -277,20 +183,6 @@ public class Enemy : MonoBehaviour, IDamageable
         SetZeroVelocity();
         isknockback = false;
     }
-
-    //private Vector2 CalculateKnockback(Transform damageDealer)
-    //{
-    //    int direction = damageDealer.position.x > transform.position.x ? 1 : -1;
-
-    //    Vector2 knockBack = knockbackForce;
-    //    knockBack.x *= direction;
-
-    //    return knockBack;
-    //}
-
-
-
-
     #region 翻转函数
     public void Flip()
     {
