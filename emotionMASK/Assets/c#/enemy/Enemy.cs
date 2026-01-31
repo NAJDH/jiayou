@@ -80,7 +80,7 @@ public class Enemy : MonoBehaviour, IDamageable
     private bool isDead;
 
     [Header("检测目标")]
-    [SerializeField] private Transform targetCheckPoint;
+    //[SerializeField] private Transform targetCheckPoint;
     [SerializeField] private float targetCheckRadius;
     [SerializeField] private LayerMask whatIsTarget;
 
@@ -170,6 +170,7 @@ public class Enemy : MonoBehaviour, IDamageable
     protected void Die()
     {
         isDead = true;
+        EnemyManager.EnemyKilled++;
         Destroy(gameObject);
     }
 
@@ -287,7 +288,7 @@ public class Enemy : MonoBehaviour, IDamageable
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(targetCheckPoint.position, targetCheckRadius);
+        //Gizmos.DrawWireSphere(targetCheckPoint.position, targetCheckRadius);
 
         Gizmos.DrawLine(groundCheckPoint.position, groundCheckPoint.position + new Vector3(0, -groundCheckDistance));
         Gizmos.DrawLine(wallCheckPoint.position, wallCheckPoint.position + new Vector3(wallCheckDistance * EntityDirection, 0, 0));

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class playerDieState : playerState
 {
@@ -16,6 +17,9 @@ public class playerDieState : playerState
     public override void Update()
     {
         base.Update();
+
+        SceneManager.LoadScene(0);
+        
     }
     public override void Exit()
     {

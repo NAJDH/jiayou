@@ -57,3 +57,6 @@ TagManager:
   - name: Player
     uniqueID: 1260326193
     locked: 0
+  - name: CrossFade
+    uniqueID: 2322345653
+    locked: 0

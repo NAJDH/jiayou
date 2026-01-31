@@ -24,7 +24,7 @@ public class PlayerHitbox : MonoBehaviour
         Collider2D col = GetComponent<Collider2D>();
         if (col == null)
         {
-            Debug.LogError("❌ 攻击框缺少 Collider2D 组件！");
+            Debug.LogWarning("❌ 攻击框缺少 Collider2D 组件！");
         }
         else
         {
