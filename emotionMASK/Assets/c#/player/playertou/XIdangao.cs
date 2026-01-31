@@ -7,6 +7,7 @@ public class XIdangao : MonoBehaviour
     [Header("子弹属性")]
     public float damage = 15f; // 子弹伤害
     public float bulletSpeed = 10f; // 子弹速度
+    private bool isOnWall = false; // 是否已经碰到墙壁
     
     [Header("特效")]
     public GameObject hitEffectPrefab; // 命中特效
@@ -39,17 +40,22 @@ public class XIdangao : MonoBehaviour
 
         // 检测是否击中敌人
         IDamageable target = collision.GetComponent<IDamageable>();
+        if (!isOnWall)
+        {
         if (target != null)
         {
             HitEnemy(target, collision);
             return;
+        }
+            
         }
 
         // 检测是否击中地面/墙壁
         if (collision.gameObject.layer == LayerMask.NameToLayer("Ground") || 
             collision.gameObject.layer == LayerMask.NameToLayer("Wall"))
         {
-            HitGround(collision);
+            isOnWall = true;
+            
             return;
         }
     }
@@ -97,20 +103,7 @@ public class XIdangao : MonoBehaviour
     {
         hasHit = true;
 
-        Debug.Log("子弹击中地面,销毁");
-
-        // 播放销毁音效
         
-
-        // 生成销毁特效
-        if (destroyEffectPrefab != null)
-        {
-            Vector2 hitPoint = collision.ClosestPoint(transform.position);
-            Instantiate(destroyEffectPrefab, hitPoint, Quaternion.identity);
-        }
-
-        // 销毁子弹
-        Destroy(gameObject);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
