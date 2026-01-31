@@ -35,8 +35,6 @@ public class playerNormalATK2 : playerState
         else if(playerStateManager.JU)
         {
             stateTimer = 0.2f;
-            //播放音效
-            AudioManager.PlayAudio("attack");
         }
         
         hitboxManager = player.GetComponent<PlayerHitboxManager>(); // 获取管理器引用
@@ -81,6 +79,8 @@ public class playerNormalATK2 : playerState
             Debug.Log($"AnimationTriggered: {player.animEvent.AnimationTriggered}, AnimationTriggered2: {player.animEvent.AnimationTriggered2}");
             if (player.animEvent.AnimationTriggered2)
             {
+                //播放音效
+            AudioManager.PlayAudio("attack");
             player.animEvent.AnimationTriggered2 = false;
             // 示例:在玩家攻击状态中生成子弹
             GameObject projectilePrefab = player.playerProjectilePrefab; // 假设玩家有一个投射物预制体引用
