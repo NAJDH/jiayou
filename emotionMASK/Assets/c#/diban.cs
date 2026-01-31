@@ -13,7 +13,12 @@ public class diban : MonoBehaviour
     // 生成位置 = 物体长度 * 该倍数
     public float spawnOffsetMultiplier = 2f;
 
-    private bool spawned = false;
+    [Header("Despawn")]
+    // 超过 3 倍长度就销毁
+    public float despawnMultiplier = 3f;
+
+    private bool spawnedRight = false;
+    private bool spawnedLeft = false;
     private float length = 1f;
 
     private void Awake()
@@ -23,28 +28,48 @@ public class diban : MonoBehaviour
 
     private void Update()
     {
-        if (spawned || player == null) return;
+        if (player == null) return;
 
-        // 当前物体右边缘
         float rightEdge = transform.position.x + length * 0.5f;
+        float leftEdge = transform.position.x - length * 0.5f;
 
-        // 玩家接近右边缘时生成
-        if (player.position.x >= rightEdge - edgeThreshold)
+        // 新增：玩家必须在本段范围内才允许生成
+        bool playerInside = player.position.x >= leftEdge && player.position.x <= rightEdge;
+
+        if (!spawnedRight && playerInside && player.position.x >= rightEdge - edgeThreshold)
         {
             Vector3 spawnPos = transform.position;
             spawnPos.x += length * spawnOffsetMultiplier;
 
             GameObject clone = Instantiate(gameObject, spawnPos, transform.rotation, transform.parent);
-
-            // 防止克隆体立刻再次生成
             diban cloneScript = clone.GetComponent<diban>();
             if (cloneScript != null)
             {
-                cloneScript.spawned = false;
                 cloneScript.player = player;
             }
 
-            spawned = true;
+            spawnedRight = true;
+        }
+
+        if (!spawnedLeft && playerInside && player.position.x <= leftEdge + edgeThreshold)
+        {
+            Vector3 spawnPos = transform.position;
+            spawnPos.x -= length * spawnOffsetMultiplier;
+
+            GameObject clone = Instantiate(gameObject, spawnPos, transform.rotation, transform.parent);
+            diban cloneScript = clone.GetComponent<diban>();
+            if (cloneScript != null)
+            {
+                cloneScript.player = player;
+            }
+
+            spawnedLeft = true;
+        }
+
+        float distance = Mathf.Abs(player.position.x - transform.position.x);
+        if (distance > length * despawnMultiplier)
+        {
+            Destroy(gameObject);
         }
     }
 
