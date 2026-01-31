@@ -1049,118 +1049,73 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allStories:
-  - chapterName: Two small children talk about the "ri"
+  - chapterName: I feel uncomfortable!!!
     lines:
-    - characterName: Chen
-      position: 0
-      characterSprite: {fileID: 21300000, guid: a62733a4655410c4a9d8598f016f5947, type: 3}
-      sentence: Fuck
-    - characterName: Man!
+    - characterName: "\u738B\u4E00\u5E06"
       position: 1
-      characterSprite: {fileID: -1572594702, guid: b854754deafc03840aa40bce763bf65d, type: 3}
-      sentence: Sun
-    - characterName: Chen
+      characterSprite: {fileID: 0}
+      sentence: "\uFF08\u5927\u6B65\u51B2\u5230\u684C\u524D\uFF0C\u53CC\u624B\u62CD\u5728\u684C\u9762\u4E0A\uFF09\n\u5FC3\u7406\u59D4\u5458\uFF01\u4FFA\u4E0D\u5F97\u52B2\uFF01\u771F\u7684\u4E0D\u5F97\u52B2\uFF01"
+    - characterName: "\u5FC3\u7406\u59D4\u5458"
       position: 0
-      characterSprite: {fileID: 21300000, guid: a62733a4655410c4a9d8598f016f5947, type: 3}
-      sentence: Fuck!!
-    - characterName: Man!
+      characterSprite: {fileID: 21300000, guid: d72469efd87ef6a4090de92c2a0f1c5f, type: 3}
+      sentence: "\uFF08\u7F13\u7F13\u62AC\u5934\uFF0C\u63A8\u4E86\u63A8\u773C\u775B\uFF0C\u628A\u7B14\u653E\u4E0B\uFF09\n\u738B\u4E00\u5E06\u540C\u5B66\uFF0C\u54B1\u4EEC\u81EA\u4E60\u5BA4\u7684\u95E8......\u5B83\u8FD8\u53EA\u662F\u4E2A\u5B69\u5B50\u3002"
+    - characterName: "\u738B\u4E00\u5E06"
       position: 1
-      characterSprite: {fileID: 21300000, guid: a9361d149e2cae44693b510d1f8600c6, type: 3}
-      sentence: Sun!!!
-    - characterName: Chen
+      characterSprite: {fileID: 21300000, guid: 70dcf831f54920141a21a114693fb539, type: 3}
+      sentence: "\u5FC3\u7406\u59D4\u5458\uFF0C\u6551\u6551\u3002\u6211\u6700\u8FD1\u7684\u7CBE\u795E\u72B6\u6001be
+        like:\uFF08\u6BD4\u5212\u7740\uFF09\n\u65E9\u4E0A\uFF1A\u65B0\u7684\u4E00\u5929\u65B0\u7684\u5D29\u6E83\uFF1B\n\u4E2D\u5348\uFF1A\u6211\u662F\u8C01\u6211\u5728\u54EA\uFF1B\n\u665A\u4E0A\uFF1B\u7F51\u6291\u4E91\u65F6\u95F4\u5230"
+    - characterName: "\u5FC3\u7406\u59D4\u5458"
       position: 0
-      characterSprite: {fileID: 21300000, guid: a62733a4655410c4a9d8598f016f5947, type: 3}
-      sentence: Fuck!!!
-    - characterName: Man!
+      characterSprite: {fileID: 21300000, guid: d72469efd87ef6a4090de92c2a0f1c5f, type: 3}
+      sentence: "\uFF08\u4ECE\u4FDD\u6E29\u676F\u91CC\u5012\u51FA\u67B8\u675E\u8C01\uFF0C\u63A8\u8FC7\u53BB\u4E00\u676F\uFF09\n\u6765\uFF0C\u5148\u559D\u70B9\u4E2D\u5E74\u9B54\u6CD5\u836F\u6C34\u3002\n\u5177\u4F53\u8BF4\u8BF4\uFF0C\u662F\u54EA\u4F4D\u53CD\u6D3E\u5728\u6467\u6BC1\u4F60\u7684\u7CBE\u795E\u5BB6\u56ED\uFF1F"
+    - characterName: "\u738B\u4E00\u5E06"
       position: 1
-      characterSprite: {fileID: 21300000, guid: 8182d8da8c2637a448a4736d830a9ff6, type: 3}
-      sentence: Sun!!!
-    - characterName: Chen
+      characterSprite: {fileID: 21300000, guid: 65f640a3a48291d46b2f970faa4adf8a, type: 3}
+      sentence: "\uFF08\u63A5\u8FC7\u676F\u5B50\u731B\u704C\u4E00\u53E3\uFF0C\uFF09\n\u5636\u2014\u2014\u662F...\u662F\u90A3\u4E2A\u5377\u738B\u674E\u4F1F\uFF01\u4ED6\u6BCF\u5929\u516D\u70B9\u8D77\u5E8A\u80CC\u4E66\uFF01\n\u8FD8\u6709\u6211\u8FFD\u7684\u90A3\u4E2A\u756A\u5B8C\u7ED3\u4E86\uFF0C\u6700\u540E\u4E00\u96C6\u5200\u6B7B\u6211\uFF01\n\u6700\u5173\u952E\u7684\u662F...\u6211\u6697\u604B\u90A3\u4F4D\u5B66\u59D0\u6628\u5929\u5B98\u5BA3\u4E86\u3002"
+    - characterName: "\u5FC3\u7406\u59D4\u5458"
       position: 0
-      characterSprite: {fileID: 21300000, guid: a62733a4655410c4a9d8598f016f5947, type: 3}
-      sentence: Fuck you!!!!
-  - chapterName: 111
-    lines:
-    - characterName: 22
-      position: 0
-      characterSprite: {fileID: 21300000, guid: e87eb89c581bbaa4692bd2d1997c7514, type: 3}
-      sentence: '22
-
-'
-    - characterName: 33
+      characterSprite: {fileID: 21300000, guid: d72469efd87ef6a4090de92c2a0f1c5f, type: 3}
+      sentence: "\uFF08\u70B9\u5934\uFF0C\u62FF\u51FA\u5C0F\u672C\u672C\uFF09\u55EF\uFF0C\u4E09\u91CD\u66B4\u51FB\u3002\u8BA9\u6211\u770B\u770B......\u5185\u5377\u538B\u529B\u3001\u7CBE\u795E\u98DF\u7CAE\u7F3A\u5931\u3001\u60C5\u611F\u6253\u51FB......\u4F60\u8FD9\u4E2A\u5C5E\u4E8E\u662Fbuff\u53E0\u6EE1\u4E86\u554A\u3002"
+    - characterName: "\u738B\u4E00\u5E06"
       position: 1
-      characterSprite: {fileID: 21300000, guid: e87eb89c581bbaa4692bd2d1997c7514, type: 3}
-      sentence: '33
-
-'
-  - chapterName: 222
-    lines:
-    - characterName: 22
+      characterSprite: {fileID: 21300000, guid: 70dcf831f54920141a21a114693fb539, type: 3}
+      sentence: "\uFF08\u8DB4\u5728\u684C\u4E0A\uFF09\n\u6211\u73B0\u5728\u6BCF\u5929\u7741\u773C\u5C31\u60F3\u95ED\u773C\uFF0C\u95ED\u773C\u53C8\u7761\u4E0D\u7740\u3002\u5237\u624B\u673A\u5237\u5230\u51CC\u6668\u4E09\u70B9\uFF0C\u4E00\u8FB9\u7126\u8651\u4E00\u8FB9\u6446\u70C2\u3002\u5FC3\u7406\u59D4\u5458\uFF0C\u4F60\u8BF4\u6211\u662F\u4E0D\u662F\u5F97\u7389\u7389\u75C7\u4E86\uFF1F"
+    - characterName: "\u5FC3\u7406\u59D4\u5458"
       position: 0
-      characterSprite: {fileID: 21300000, guid: e87eb89c581bbaa4692bd2d1997c7514, type: 3}
-      sentence: this
-    - characterName: 33
+      characterSprite: {fileID: 21300000, guid: 222664d088f43be4aa5d4adcc4af43e9, type: 3}
+      sentence: "\uFF08\u653E\u4E0B\u7B14\uFF0C\u8BA4\u771F\u5730\u770B\u7740\u4ED6\uFF09\n\u9996\u5148\uFF0C\u522B\u81EA\u5DF1\u4E71\u8D34\u6807\u7B7E\u3002\u4F60\u8FD9\u4E0D\u662F\u7389\u7389\uFF0C\u662F\u5F53\u4EE3\u5927\u5B66\u751F\u7ECF\u5178\u6B3E\u201C\u95F4\u6B47\u6027\u8E0C\u8E87\u6EE1\u5FD7\uFF0C\u6301\u7EED\u6027\u6DF7\u5403\u7B49\u6B7B\u201D\u7EFC\u5408\u5F81\u3002"
+    - characterName: "\u738B\u4E00\u5E06"
       position: 1
-      characterSprite: {fileID: 21300000, guid: e87eb89c581bbaa4692bd2d1997c7514, type: 3}
-      sentence: that
-  - chapterName: 333
-    lines:
-    - characterName: 22
+      characterSprite: {fileID: 21300000, guid: 90270f6d745e060468d407ac1d231028, type: 3}
+      sentence: "\uFF08\u773C\u775B\u4E00\u4EAE\uFF09\n\u6709\u6CBB\u5417\uFF1F"
+    - characterName: "\u5FC3\u7406\u59D4\u5458"
       position: 0
-      characterSprite: {fileID: 21300000, guid: e87eb89c581bbaa4692bd2d1997c7514, type: 3}
-      sentence: 666
-    - characterName: 33
+      characterSprite: {fileID: 21300000, guid: 143c7971a7e128140af499cd5dd623e5, type: 3}
+      sentence: "\u8BF4\u6B63\u7ECF\u7684\uFF0C\u4F60\u6700\u8FD1\u5403\u996D\u89C4\u5F8B\u5417\uFF1F\u7761\u89C9\u80FD\u7761\u51E0\u4E2A\u5C0F\u65F6\uFF1F"
+    - characterName: "\u738B\u4E00\u5E06"
       position: 1
-      characterSprite: {fileID: 21300000, guid: e87eb89c581bbaa4692bd2d1997c7514, type: 3}
-      sentence: 6nm
-  - chapterName: 444
-    lines:
-    - characterName: 22
+      characterSprite: {fileID: 21300000, guid: 70dcf831f54920141a21a114693fb539, type: 3}
+      sentence: "\uFF08\u6320\u5934\uFF09\n\u5403\u996D...\u9760\u5916\u5356\u7EED\u547D\u3002\n\u7761\u89C9...\u6628\u665A\u770B\u4E86\u4E00\u5BBF\u201C\u5982\u4F55\u81EA\u5F8B\u201D\u7684\u89C6\u9891\u3002"
+    - characterName: "\u5FC3\u7406\u59D4\u5458"
       position: 0
-      characterSprite: {fileID: 21300000, guid: e87eb89c581bbaa4692bd2d1997c7514, type: 3}
-      sentence: fuck
-    - characterName: 33
+      characterSprite: {fileID: 21300000, guid: 222664d088f43be4aa5d4adcc4af43e9, type: 3}
+      sentence: "\uFF08\u6276\u989D\uFF09\n\u5F88\u597D\uFF0C\u5178\u578B\u7684\u201C\u7528\u7126\u8651\u5BF9\u6297\u7126\u8651\u201D\u3002\u8FD9\u6837\uFF0C\u4F60\u4ECA\u5929\u5C31\u505A\u4E00\u4EF6\u4E8B\uFF1A\u665A\u4E0A\u5341\u4E00\u70B9\u524D\uFF0C\u628A\u624B\u673A\u6254\u5230\u5E8A\u5E95\u4E0B\u3002"
+    - characterName: "\u738B\u4E00\u5E06"
       position: 1
-      characterSprite: {fileID: 21300000, guid: e87eb89c581bbaa4692bd2d1997c7514, type: 3}
-      sentence: '33
-
-'
-  - chapterName: 555
-    lines:
-    - characterName: 22
+      characterSprite: {fileID: 21300000, guid: 70dcf831f54920141a21a114693fb539, type: 3}
+      sentence: "\uFF08\u72B9\u8C6B\uFF09\n\u624B\u673A\u6254\u5E8A\u5E95\u4E0B...\u8FD8\u600E\u4E48\u5237\u89C6\u9891\uFF1F"
+    - characterName: "\u5FC3\u7406\u59D4\u5458"
       position: 0
-      characterSprite: {fileID: 21300000, guid: e87eb89c581bbaa4692bd2d1997c7514, type: 3}
-      sentence: '*****'
-    - characterName: 33
+      characterSprite: {fileID: 21300000, guid: 143c7971a7e128140af499cd5dd623e5, type: 3}
+      sentence: "\u5C31\u662F\u8981\u8BA9\u4F60\u5237\u4E0D\u4E86\u3002\n\u4F60\u77E5\u9053\u5417\uFF1F\u8FC7\u5EA6\u5237\u624B\u673A\u5C31\u50CF\u4EAC\u5F88\u4E0A\u7684\u5403\u5783\u573E\u98DF\u54C1\u2014\u2014\n\u77ED\u671F\u5FEB\u4E50\uFF0C\u957F\u671F\u7A7A\u865A\u3002"
+    - characterName: "\u738B\u4E00\u5E06"
       position: 1
-      characterSprite: {fileID: 21300000, guid: e87eb89c581bbaa4692bd2d1997c7514, type: 3}
-      sentence: '33
-
-'
-  - chapterName: 666
-    lines:
-    - characterName: 22
+      characterSprite: {fileID: 21300000, guid: 70dcf831f54920141a21a114693fb539, type: 3}
+      sentence: "........\u90A3\u6211\u8981\u662F...\u8FD8\u4E0D\u5F97\u52B2\u5462\uFF1F"
+    - characterName: "\u5FC3\u7406\u59D4\u5458"
       position: 0
-      characterSprite: {fileID: 21300000, guid: e87eb89c581bbaa4692bd2d1997c7514, type: 3}
-      sentence: mine
-    - characterName: 33
-      position: 1
-      characterSprite: {fileID: 21300000, guid: e87eb89c581bbaa4692bd2d1997c7514, type: 3}
-      sentence: '33
-
-'
-  - chapterName: 777
-    lines:
-    - characterName: 22
-      position: 0
-      characterSprite: {fileID: 21300000, guid: e87eb89c581bbaa4692bd2d1997c7514, type: 3}
-      sentence: stop
-    - characterName: 33
-      position: 1
-      characterSprite: {fileID: 21300000, guid: e87eb89c581bbaa4692bd2d1997c7514, type: 3}
-      sentence: '33
-
-'
+      characterSprite: {fileID: 21300000, guid: 143c7971a7e128140af499cd5dd623e5, type: 3}
+      sentence: "\u90A3\u6211\u5C31\u5F97\u7ED9\u4F60\u597D\u597D\u6CBB\u6CBB\u4E86......"
 --- !u!4 &1311464192
 Transform:
   m_ObjectHideFlags: 0
@@ -1420,7 +1375,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 599, y: 1540}
+  m_SizeDelta: {x: 1093, y: 1474}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1547020594
 MonoBehaviour:
@@ -1442,7 +1397,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1c75f7c202f4b5747b01613fc2f7b3a2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 70dcf831f54920141a21a114693fb539, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1512,14 +1467,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4124507, g: 0, b: 0.5283019, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: cd9a629b39feeff4291a895eff6839cb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
