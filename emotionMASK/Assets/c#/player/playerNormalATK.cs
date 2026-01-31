@@ -19,9 +19,23 @@ public class playerNormalATK : playerState
     {
         base.Enter();
         stateTimer = 0.2f;
-
-        //播放音效
-        AudioManager.PlayAudio("attack");
+        if(playerStateManager.XI)
+        {
+            //播放音效
+            AudioManager.PlayAudio("attack");
+        }
+        else if(playerStateManager.NU)
+        {
+            
+        }
+        else if(playerStateManager.AI)
+        {
+            
+        }
+        else if(playerStateManager.JU)
+        {
+            
+        }
         hitboxManager = player.GetComponent<PlayerHitboxManager>(); // 获取管理器引用
     }
 
@@ -55,7 +69,12 @@ public class playerNormalATK : playerState
         }
         else if(playerStateManager.AI)
         {
-            
+            GameObject projectilePrefab = player.playerProjectilePrefab; // 假设玩家有一个投射物预制体引用
+            Quaternion spawnRotation = Quaternion.identity;
+            GameObject projectileInstance = GameObject.Instantiate(projectilePrefab, player.transform.position + new Vector3(1f, 0f, 0f), spawnRotation);
+            GameObject projectileInstance1 = GameObject.Instantiate(projectilePrefab, player.transform.position + new Vector3(-1f, 0f, 0f), spawnRotation);
+            GameObject projectileInstance2 = GameObject.Instantiate(projectilePrefab, player.transform.position + new Vector3(2f, 0f, 0f), spawnRotation);
+            GameObject projectileInstance3 = GameObject.Instantiate(projectilePrefab, player.transform.position + new Vector3(3f, 0f, 0f), spawnRotation);
         }
         else if(playerStateManager.JU)
         {
