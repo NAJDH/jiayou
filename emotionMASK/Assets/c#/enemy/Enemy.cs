@@ -170,7 +170,7 @@ public class Enemy : MonoBehaviour, IDamageable
     protected void Die()
     {
         isDead = true;
-        Destroy(this);
+        Destroy(gameObject);
     }
 
     private void UpdateHealthBar() 

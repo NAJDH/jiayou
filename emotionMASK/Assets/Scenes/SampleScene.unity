@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerProjectilePrefab: {fileID: 9072292190187427146, guid: c7c58040455176a4a9b8b0f20329f0be, type: 3}
+  playerHenshinEffect: {fileID: 5287684368825391664, guid: fb2f23912ad29d34b99096b73cf6f56e, type: 3}
   animEvent: {fileID: 1383566773}
   groundCheck: {fileID: 294970489}
   groundCheckRange: 0.53
@@ -249,6 +250,7 @@ Transform:
   m_Children:
   - {fileID: 1383566778}
   - {fileID: 294970489}
+  - {fileID: 801231026}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &24995470
@@ -462,6 +464,58 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitTriggered: 0
   AnimationTriggered2: 0
+--- !u!1 &38960619
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 38960620}
+  - component: {fileID: 38960621}
+  m_Layer: 0
+  m_Name: HenshinTrigger (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &38960620
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 38960619}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.05, y: -1.48, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1721944774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &38960621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 38960619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0baab0af82d7b71489c9af8fedc11e2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectPrefabs:
+  - {fileID: 5287684368825391664, guid: fb2f23912ad29d34b99096b73cf6f56e, type: 3}
+  - {fileID: 5287684368825391664, guid: fb2f23912ad29d34b99096b73cf6f56e, type: 3}
+  - {fileID: 5287684368825391664, guid: fb2f23912ad29d34b99096b73cf6f56e, type: 3}
+  - {fileID: 5287684368825391664, guid: fb2f23912ad29d34b99096b73cf6f56e, type: 3}
+  spawnOffset: {x: 0, y: 0, z: 0}
+  parentToThis: 1
+  fallbackPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &62624200
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,6 +703,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerProjectilePrefab: {fileID: 0}
+  playerHenshinEffect: {fileID: 5287684368825391664, guid: fb2f23912ad29d34b99096b73cf6f56e, type: 3}
   animEvent: {fileID: 597179075}
   groundCheck: {fileID: 62624201}
   groundCheckRange: 0.53
@@ -744,6 +799,7 @@ Transform:
   m_Children:
   - {fileID: 597179080}
   - {fileID: 62624201}
+  - {fileID: 1638409702}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &322817144
@@ -854,6 +910,7 @@ Transform:
   - {fileID: 28057829}
   - {fileID: 137453898}
   - {fileID: 24995471}
+  - {fileID: 1889976760}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &322817148
@@ -869,6 +926,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerProjectilePrefab: {fileID: 3931832681128466766, guid: d21aa6ee4e122db47835fb9022a7f366, type: 3}
+  playerHenshinEffect: {fileID: 5287684368825391664, guid: fb2f23912ad29d34b99096b73cf6f56e, type: 3}
   animEvent: {fileID: 28057831}
   groundCheck: {fileID: 137453898}
   groundCheckRange: 0.53
@@ -1829,6 +1887,58 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1288784197}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &801231025
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 801231026}
+  - component: {fileID: 801231027}
+  m_Layer: 0
+  m_Name: HenshinTrigger (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &801231026
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801231025}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.02, y: -1.43, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 17443122}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &801231027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801231025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0baab0af82d7b71489c9af8fedc11e2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectPrefabs:
+  - {fileID: 5287684368825391664, guid: fb2f23912ad29d34b99096b73cf6f56e, type: 3}
+  - {fileID: 5287684368825391664, guid: fb2f23912ad29d34b99096b73cf6f56e, type: 3}
+  - {fileID: 5287684368825391664, guid: fb2f23912ad29d34b99096b73cf6f56e, type: 3}
+  - {fileID: 5287684368825391664, guid: fb2f23912ad29d34b99096b73cf6f56e, type: 3}
+  spawnOffset: {x: 0, y: 0, z: 0}
+  parentToThis: 1
+  fallbackPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &809209414
 GameObject:
   m_ObjectHideFlags: 0
@@ -2265,7 +2375,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1042878140
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2877,7 +2987,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1288784192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3230,7 +3340,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1347631241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4387,7 +4497,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1603621134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4600,6 +4710,58 @@ Transform:
   - {fileID: 500322670}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1638409701
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1638409702}
+  - component: {fileID: 1638409703}
+  m_Layer: 0
+  m_Name: HenshinTrigger (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1638409702
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638409701}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.08, y: -1.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 320381936}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1638409703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638409701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0baab0af82d7b71489c9af8fedc11e2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectPrefabs:
+  - {fileID: 5287684368825391664, guid: fb2f23912ad29d34b99096b73cf6f56e, type: 3}
+  - {fileID: 5287684368825391664, guid: fb2f23912ad29d34b99096b73cf6f56e, type: 3}
+  - {fileID: 5287684368825391664, guid: fb2f23912ad29d34b99096b73cf6f56e, type: 3}
+  - {fileID: 5287684368825391664, guid: fb2f23912ad29d34b99096b73cf6f56e, type: 3}
+  spawnOffset: {x: 0, y: 0, z: 0}
+  parentToThis: 1
+  fallbackPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1677397554
 GameObject:
   m_ObjectHideFlags: 0
@@ -4786,6 +4948,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerProjectilePrefab: {fileID: 0}
+  playerHenshinEffect: {fileID: 5287684368825391664, guid: fb2f23912ad29d34b99096b73cf6f56e, type: 3}
   animEvent: {fileID: 1054308552}
   groundCheck: {fileID: 1352877387}
   groundCheckRange: 0.53
@@ -4881,6 +5044,7 @@ Transform:
   m_Children:
   - {fileID: 1054308557}
   - {fileID: 1352877387}
+  - {fileID: 38960620}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1750961448
@@ -5247,6 +5411,58 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1889976759
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1889976760}
+  - component: {fileID: 1889976761}
+  m_Layer: 0
+  m_Name: HenshinTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1889976760
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889976759}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.01699996, y: -1.42, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 322817147}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1889976761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889976759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0baab0af82d7b71489c9af8fedc11e2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectPrefabs:
+  - {fileID: 5287684368825391664, guid: fb2f23912ad29d34b99096b73cf6f56e, type: 3}
+  - {fileID: 5287684368825391664, guid: fb2f23912ad29d34b99096b73cf6f56e, type: 3}
+  - {fileID: 5287684368825391664, guid: fb2f23912ad29d34b99096b73cf6f56e, type: 3}
+  - {fileID: 5287684368825391664, guid: fb2f23912ad29d34b99096b73cf6f56e, type: 3}
+  spawnOffset: {x: 0, y: 0, z: 0}
+  parentToThis: 1
+  fallbackPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1946457745
 GameObject:
   m_ObjectHideFlags: 0
@@ -5722,11 +5938,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5510634296868568527, guid: 725bf71598084b242881de013949730c, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5510634296868568527, guid: 725bf71598084b242881de013949730c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5966165678499075555, guid: 725bf71598084b242881de013949730c, type: 3}
       propertyPath: m_Sprite

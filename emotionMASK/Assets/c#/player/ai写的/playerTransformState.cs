@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class playerTransformState : playerState
@@ -16,6 +17,10 @@ public class playerTransformState : playerState
         base.Enter();
         player.SetVelocity(0,0); // 进入形态切换状态时停止移动
         // 播放形态切换动画
+        GameObject henshinEffect = player.playerHenshinEffect;
+        Quaternion spawnRotation = Quaternion.identity;
+        Vector3 spawnPosition = player.transform.position;
+        GameObject projectileInstance = GameObject.Instantiate(henshinEffect, spawnPosition,spawnRotation);
         Debug.Log($"开始形态切换动画");
     }
 

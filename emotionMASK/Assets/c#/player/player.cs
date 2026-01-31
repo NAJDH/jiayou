@@ -5,9 +5,12 @@ using UnityEngine;
 public class player : MonoBehaviour
 {
     public GameObject playerProjectilePrefab; // 玩家投射物预制体引用
+    public GameObject playerHenshinEffect;
     [Header("组件引用")]
     private PlayerHitboxManager hitboxManager; // 🟢 新增：只需要这一个引用
     public AnimEvent animEvent;
+    //[Header("henshin")]
+    //public GameObject henshinTrigger;// => GameObject.Find("Henshin");
     [Header("地面检测")]
     public Transform groundCheck;
     public float groundCheckRange = 0.2f;
@@ -36,6 +39,7 @@ public class player : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
         animEvent = GetComponentInChildren<AnimEvent>();
+        //henshinTrigger = GameObject.Find("Henshin");
         stateMachine = new playerStateMachine();
         idleState = new playerIdleState(this, stateMachine, "idle");
         moveState = new playerMoveState(this, stateMachine, "move");
@@ -55,7 +59,9 @@ public class player : MonoBehaviour
     protected void Start() 
     {
         stateMachine.Initialize(idleState);         //这个函数在playerStateMachine里面有写，是初始化第一个状态的
-        
+
+        //henshinTrigger.SetActive(false);
+
         // 重置所有动画事件标志
         animEvent.ResetAnimationEvent();
         animEvent.DisableHitbox();
@@ -153,4 +159,7 @@ public void OnAttackHit(IDamageable target, Collider2D hitInfo)
         }
     }
     #endregion
+
+
+    //public void MakeHenshinTriggerDisActive() => henshinTrigger.SetActive(false);
 }

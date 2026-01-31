@@ -6,7 +6,10 @@ using Cinemachine;
 public class PlayerFormManager : MonoBehaviour
 {
     public static PlayerFormManager playerForm { get; private set; }
-    
+
+    //public GameObject henshinTrigger;// => GameObject.Find("Henshin");
+    //public Animator henshinAnim;
+
     [Header("四种玩家形态")]
     public GameObject form1; // 形态1
     public GameObject form2; // 形态2
@@ -24,6 +27,9 @@ public class PlayerFormManager : MonoBehaviour
     
     private void Awake()
     {
+        //henshinTrigger = GameObject.Find("Henshin");
+        //henshinAnim = henshinTrigger.GetComponent<Animator>();
+
         if (playerForm == null)
             playerForm = this;
         else
@@ -109,8 +115,10 @@ public class PlayerFormManager : MonoBehaviour
             Debug.LogWarning($"形态{targetFormIndex}不存在！");
             return;
         }
-        
+
         // 触发形态切换
+        //henshinTrigger.SetActive(true);      //变身特效对象
+        //henshinAnim.SetTrigger("henshin");   //变身动画
         GameObject targetForm = formDictionary[targetFormIndex];
         
         player currentPlayer = currentPlayerForm.GetComponent<player>();
