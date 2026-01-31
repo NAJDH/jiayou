@@ -1,10 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour, IDamageable
 {
+    private Slider healthBar;
+    public event Action OnFlipped;
+
     public int EntityDirection { get; private set; } = 1;
     public bool isFacingRight { get; private set; } = true;
     public SpriteRenderer spriteRenderer { get; private set; }
@@ -100,6 +105,7 @@ public class Enemy : MonoBehaviour, IDamageable
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        healthBar = GetComponentInChildren<Slider>();
 
         stateMachine = new EnemyStateMachine();
 
@@ -118,7 +124,7 @@ public class Enemy : MonoBehaviour, IDamageable
     protected virtual void Start()
     {
         currentHealth = maxHealth;
-
+        UpdateHealthBar();
         #region
         //// 设置初始形态
         //TransformTo(startingForm);
@@ -132,7 +138,8 @@ public class Enemy : MonoBehaviour, IDamageable
 
         PhysicsCheck();
 
-
+        //if (isDead)
+        //    Destroy(this);
 
         #region
         //// 形态切换逻辑
@@ -247,6 +254,7 @@ public class Enemy : MonoBehaviour, IDamageable
     protected void ReduceHP(float amount)
     {
         currentHealth -= amount;
+        UpdateHealthBar();
 
         Instantiate(bloodEffect, transform.position, Quaternion.identity);
 
@@ -256,6 +264,15 @@ public class Enemy : MonoBehaviour, IDamageable
     protected void Die()
     {
         isDead = true;
+        Destroy(this);
+    }
+
+    private void UpdateHealthBar() 
+    {
+        if (healthBar == null)
+            return;
+
+        healthBar.value = currentHealth / maxHealth;
     }
 
     public void ReciveKnockback(Vector2 knockback, float duration)
@@ -297,6 +314,8 @@ public class Enemy : MonoBehaviour, IDamageable
         EntityDirection *= -1;
         isFacingRight = !isFacingRight;
         transform.Rotate(0f, 180f, 0f);
+
+        OnFlipped?.Invoke();
     }
     public void FilpController(float x)
     {
