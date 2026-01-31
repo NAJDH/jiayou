@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class playerNormalATK : playerState
 {
-    public AudioClip hitSound; // 命中音效
     [Header("普通攻击判定")]
     public string normalATKHitboxName = "normalATK"; // 🟢 改用字符串名称
 
     private PlayerHitboxManager hitboxManager; // 🟢 引用管理器
+    private int attackCount = 0; // 用于连击计数
 
     public playerNormalATK(player player, playerStateMachine stateMachine, string animBoolName) 
         : base(player, stateMachine, animBoolName)
@@ -26,7 +26,17 @@ public class playerNormalATK : playerState
         }
         else if(playerStateManager.NU)
         {
-            
+            AudioManager.PlayAudio("nu");
+            if(attackCount == 0)
+            {
+                attackCount += 1;
+            }else if(attackCount == 1)
+            {
+                attackCount = 0;
+            }
+            playerStateManager.isBaoji ++;
+            player.anim.SetInteger("combo", attackCount);
+
         }
         else if(playerStateManager.AI)
         {
@@ -65,20 +75,48 @@ public class playerNormalATK : playerState
         }
         else if(playerStateManager.NU)
         {
-            
+            // 🟢 使用 PlayerHitboxManager 来控制判定开关
+        if (player.animEvent.hitTriggered && hitboxManager != null)
+        {
+            Debug.Log("普通攻击判定开启");
+            hitboxManager.EnableHitbox(normalATKHitboxName); // ← 使用管理器开启
+        }
+        else if (!player.animEvent.hitTriggered && hitboxManager != null)
+        {
+            Debug.Log("普通攻击判定关闭");
+            hitboxManager.DisableHitbox(normalATKHitboxName); // ← 使用管理器关闭
+        }
         }
         else if(playerStateManager.AI)
         {
+            if (player.animEvent.AnimationTriggered2)
+            {
+                //播放音效
+            AudioManager.PlayAudio("lei");
+            player.animEvent.AnimationTriggered2 = false;
+            // 示例:在玩家攻击状态中生成子弹
             GameObject projectilePrefab = player.playerProjectilePrefab; // 假设玩家有一个投射物预制体引用
             Quaternion spawnRotation = Quaternion.identity;
-            GameObject projectileInstance = GameObject.Instantiate(projectilePrefab, player.transform.position + new Vector3(1f, 0f, 0f), spawnRotation);
-            GameObject projectileInstance1 = GameObject.Instantiate(projectilePrefab, player.transform.position + new Vector3(-1f, 0f, 0f), spawnRotation);
-            GameObject projectileInstance2 = GameObject.Instantiate(projectilePrefab, player.transform.position + new Vector3(2f, 0f, 0f), spawnRotation);
-            GameObject projectileInstance3 = GameObject.Instantiate(projectilePrefab, player.transform.position + new Vector3(3f, 0f, 0f), spawnRotation);
+            GameObject projectileInstance = GameObject.Instantiate(projectilePrefab, player.transform.position + new Vector3(-2f, 3f, 0f), spawnRotation);
+            GameObject projectileInstance1 = GameObject.Instantiate(projectilePrefab, player.transform.position + new Vector3(-4f, 3f, 0f), spawnRotation);
+            GameObject projectileInstance2 = GameObject.Instantiate(projectilePrefab, player.transform.position + new Vector3(2f, 3f, 0f), spawnRotation);
+            GameObject projectileInstance3 = GameObject.Instantiate(projectilePrefab, player.transform.position + new Vector3(4f, 3f, 0f), spawnRotation);
+
+            }
         }
         else if(playerStateManager.JU)
         {
-            
+            // 🟢 使用 PlayerHitboxManager 来控制判定开关
+        if (player.animEvent.hitTriggered && hitboxManager != null)
+        {
+            Debug.Log("普通攻击判定开启");
+            hitboxManager.EnableHitbox(normalATKHitboxName); // ← 使用管理器开启
+        }
+        else if (!player.animEvent.hitTriggered && hitboxManager != null)
+        {
+            Debug.Log("普通攻击判定关闭");
+            hitboxManager.DisableHitbox(normalATKHitboxName); // ← 使用管理器关闭
+        }
         }
         // 攻击结束后返回待机状态
         if (player.animEvent.AnimationTriggered)

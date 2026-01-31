@@ -10,6 +10,8 @@ public static class playerStateManager
     public static bool NU;
     public static bool AI;
     public static bool JU;
+    public static int isBaoji;
+    public static bool baoji;
     public static bool isDead = false;
     public static bool isBeHit = false;                 //这个用来标识玩家是否受击,会在执行受击动画的刚开始被重置
     public static bool isBeingHitting = false;          //这个用来标识玩家是否正在受击，会在受击动画的最后用动画事件重置
@@ -38,24 +40,41 @@ public static class playerStateManager
         if(PlayerFormManager.playerForm.currentFormIndex == 1)
         {
             XI = true;
+            NU = false;
+            AI = false;
+            JU = false;
         }
         if(PlayerFormManager.playerForm.currentFormIndex == 2)
         {
             NU = true;
+            XI = false;
+            JU = false;
+            AI = false;
         }
         if(PlayerFormManager.playerForm.currentFormIndex == 3)
         {
             AI = true;
+            XI = false;
+            NU = false;
+            JU = false;
         }
         if(PlayerFormManager.playerForm.currentFormIndex == 4)
         {
             JU = true;
+            XI = false;
+            NU = false;
+            AI = false;
         }
     }
     
     public static float playerCalculateDamage(float baseDamage)
     {
         bool isCritical = Random.value < critRate;
+        if (baoji)
+        {
+            isCritical = true;
+            isBaoji = 0;
+        }
         if (isCritical)
         {
             HitStopManager.Instance.TriggerHitStop(3.0f, 0.2f, "baoji", false);

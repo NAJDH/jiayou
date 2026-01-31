@@ -26,7 +26,7 @@ public class playerNormalATK2 : playerState
         }
         else if(playerStateManager.NU)
         {
-            
+            AudioManager.PlayAudio("nu");
         }
         else if(playerStateManager.AI)
         {
@@ -68,11 +68,34 @@ public class playerNormalATK2 : playerState
         }
         else if(playerStateManager.NU)
         {
-            
+            if(playerStateManager.isBaoji > 1)
+            {
+                playerStateManager.baoji = true;
+            }
+            // 🟢 使用 PlayerHitboxManager 来控制判定开关
+        if (player.animEvent.hitTriggered && hitboxManager != null)
+        {
+            Debug.Log("普通攻击判定开启");
+            hitboxManager.EnableHitbox(normalATKHitboxName); // ← 使用管理器开启
+        }
+        else if (!player.animEvent.hitTriggered && hitboxManager != null)
+        {
+            Debug.Log("普通攻击判定关闭");
+            hitboxManager.DisableHitbox(normalATKHitboxName); // ← 使用管理器关闭
+        }
         }
         else if(playerStateManager.AI)
         {
-            
+            if (player.animEvent.AnimationTriggered2)
+            {
+            player.animEvent.AnimationTriggered2 = false;
+            // 示例:在玩家攻击状态中生成子弹
+            GameObject projectilePrefab = player.playerProjectileAI; // 假设玩家有一个投射物预制体引用
+            Vector3 spawnPosition = player.transform.position + (player.isFacingRight ? Vector3.right
+                : Vector3.left) * 1f +  Vector3.up * 1f; // 根据朝向调整生成位置
+            Quaternion spawnRotation = Quaternion.identity;
+            GameObject projectileInstance = GameObject.Instantiate(projectilePrefab, spawnPosition, spawnRotation);
+            }
         }
         else if(playerStateManager.JU)
         {

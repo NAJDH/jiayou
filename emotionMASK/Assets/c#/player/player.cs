@@ -5,6 +5,7 @@ using UnityEngine;
 public class player : MonoBehaviour
 {
     public GameObject playerProjectilePrefab; // 玩家投射物预制体引用
+    public GameObject playerProjectileAI; // 玩家投射物生成点
     public GameObject playerHenshinEffect;
     [Header("组件引用")]
     private PlayerHitboxManager hitboxManager; // 🟢 新增：只需要这一个引用
