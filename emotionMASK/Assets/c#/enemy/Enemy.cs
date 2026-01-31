@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour,IDamageable
+public class Enemy : MonoBehaviour, IDamageable
 {
-    public int EntityDirection{get; private set;} = 1;
+    public int EntityDirection { get; private set; } = 1;
     public bool isFacingRight { get; private set; } = true;
-    public SpriteRenderer spriteRenderer {  get; private set; }
-    public Animator anim{get; private set;}
-    public Rigidbody2D rb{get; private set;}
+    public SpriteRenderer spriteRenderer { get; private set; }
+    public Animator anim { get; private set; }
+    public Rigidbody2D rb { get; private set; }
     protected EnemyStateMachine stateMachine;
 
     [Header("基本属性")]
@@ -79,13 +79,20 @@ public class Enemy : MonoBehaviour,IDamageable
     [SerializeField] private float targetCheckRadius;
     [SerializeField] private LayerMask whatIsTarget;
 
+    [Header("受击相关")]
+    [SerializeField] private Vector2 knockbackForce;
+    [SerializeField] private float knockbackDuration = .2f;
+    private bool isknockback;
+    private Coroutine knockbackCoroutine;
+    public GameObject bloodEffect;
+
 
     //states
-    public Enemy_IdleState idleState { get; private set;}
+    public Enemy_IdleState idleState { get; private set; }
     public Enemy_MoveState moveState { get; private set; }
     public Enemy_AttackState attackState { get; private set; }
     // public Enemy_TransformState transformState { get; private set;}
-    public Enemy_BattleState battleState { get; private set;}
+    public Enemy_BattleState battleState { get; private set; }
 
 
     protected virtual void Awake()
@@ -100,7 +107,7 @@ public class Enemy : MonoBehaviour,IDamageable
         moveState = new Enemy_MoveState(this, stateMachine, "move");
         attackState = new Enemy_AttackState(this, stateMachine, "attack");
         battleState = new Enemy_BattleState(this, stateMachine, "battle");
-        
+
         #region
         //transformState = new Enemy_TransformState(this, stateMachine, "transform");
 
@@ -125,7 +132,7 @@ public class Enemy : MonoBehaviour,IDamageable
 
         PhysicsCheck();
 
-        
+
 
         #region
         //// 形态切换逻辑
@@ -230,15 +237,18 @@ public class Enemy : MonoBehaviour,IDamageable
     public virtual void TakeDamage(float damage)
     {
         Debug.Log("打到敌人了！！！！！！！！！！！！！！！！！！！！！！！！！！");
-        
+
         if (isDead)
             return;
-        
+
+        ReciveKnockback(knockbackForce * -transform.localScale.x, knockbackDuration);
         ReduceHP(damage);
     }
     protected void ReduceHP(float amount)
     {
         currentHealth -= amount;
+
+        Instantiate(bloodEffect, transform.position, Quaternion.identity);
 
         if (currentHealth <= 0)
             Die();
@@ -247,6 +257,36 @@ public class Enemy : MonoBehaviour,IDamageable
     {
         isDead = true;
     }
+
+    public void ReciveKnockback(Vector2 knockback, float duration)
+    {
+        if (knockbackCoroutine != null)
+            StopCoroutine(knockbackCoroutine);
+
+        knockbackCoroutine = StartCoroutine(KnockbackCoroutine(knockback, duration));
+    }
+
+
+    private IEnumerator KnockbackCoroutine(Vector2 knockback, float duration)
+    {
+        isknockback = true;
+        rb.velocity = knockback;
+
+        yield return new WaitForSeconds(duration);
+
+        SetZeroVelocity();
+        isknockback = false;
+    }
+
+    //private Vector2 CalculateKnockback(Transform damageDealer)
+    //{
+    //    int direction = damageDealer.position.x > transform.position.x ? 1 : -1;
+
+    //    Vector2 knockBack = knockbackForce;
+    //    knockBack.x *= direction;
+
+    //    return knockBack;
+    //}
 
 
 
@@ -260,13 +300,16 @@ public class Enemy : MonoBehaviour,IDamageable
     }
     public void FilpController(float x)
     {
-        if(x > 0 && !isFacingRight) Flip();
-        else if(x < 0 && isFacingRight) Flip();
+        if (x > 0 && !isFacingRight) Flip();
+        else if (x < 0 && isFacingRight) Flip();
     }
     #endregion
 
     public void SetVelocity(float x, float y)
     {
+        if (isknockback)
+            return;
+
         rb.velocity = new Vector2(x, y);
     }
 
@@ -303,7 +346,7 @@ public class Enemy : MonoBehaviour,IDamageable
         // 没有任何命中
         if (hit.collider == null)
         {
-            Debug.Log("Can't find anyone!!");
+            // Debug.Log("Can't find anyone!!");
             return default;
         }
 
@@ -337,7 +380,7 @@ public class Enemy : MonoBehaviour,IDamageable
 
         Gizmos.DrawLine(groundCheckPoint.position, groundCheckPoint.position + new Vector3(0, -groundCheckDistance));
         Gizmos.DrawLine(wallCheckPoint.position, wallCheckPoint.position + new Vector3(wallCheckDistance * EntityDirection, 0, 0));
-       
+
         Gizmos.color = Color.yellow;
         Gizmos.DrawLine(playerCheckPoint.position, playerCheckPoint.position + new Vector3(playerCheckDistance * EntityDirection, 0, 0));
         Gizmos.color = Color.blue;

@@ -12,6 +12,8 @@ public class player : MonoBehaviour
     public Transform groundCheck;
     public float groundCheckRange = 0.2f;
     public LayerMask groundLayer;
+    [Header("粒子")]
+    public GameObject bloodEffect;
 
     public static player Instance{get; private set;}
     public Animator anim{get; private set;}
@@ -71,6 +73,7 @@ public class player : MonoBehaviour
         {
             if(playerStateManager.playerHP > 0 && stateMachine.currentState != beenATKState)
             {
+                Instantiate(bloodEffect, transform.position, Quaternion.identity);
                 stateMachine.ChangeState(beenATKState);
             }
             else if(playerStateManager.playerHP <= 0 && stateMachine.currentState != dieState)
