@@ -13,12 +13,14 @@ public class playerDieState : playerState
     public override void Enter()
     {
         base.Enter();
+        playerStateManager.failure = true;
+        //SceneManager.LoadScene(0);
     }
     public override void Update()
     {
         base.Update();
 
-        SceneManager.LoadScene(0);
+        //SceneManager.LoadScene(0);
         
     }
     public override void Exit()

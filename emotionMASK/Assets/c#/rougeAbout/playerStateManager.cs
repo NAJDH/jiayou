@@ -4,6 +4,8 @@ using UnityEngine;
 
 public static class playerStateManager
 {
+    public static bool failure = false;
+
 
     //这是玩家数值中心
     public static bool XI;

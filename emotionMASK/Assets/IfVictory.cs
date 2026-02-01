@@ -33,6 +33,12 @@ public class IfVictory : MonoBehaviour
             //StartCoroutine(LoadSceneCO());
             //GetComponentInChildren<Animator>().SetTrigger("Skip");
         }
+
+        if(playerStateManager.failure == true)
+        {
+            Debug.Log("Defeat!");
+            SceneManager.LoadScene(0);
+        }
     }
 
 
