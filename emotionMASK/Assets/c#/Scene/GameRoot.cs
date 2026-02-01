@@ -23,7 +23,7 @@ public class GameRoot : MonoBehaviour
 
         sceneSystem = new SceneSystem();
 
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
 
 

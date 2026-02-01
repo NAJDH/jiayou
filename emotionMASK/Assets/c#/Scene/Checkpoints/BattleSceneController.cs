@@ -40,7 +40,7 @@ public class BattleSceneController : MonoBehaviour
         if (enemyParent == null)
         {
             var go = new GameObject("Enemies");
-            DontDestroyOnLoad(go); // 可选：如果你想保留跨场景则保留，否则注释掉
+            //DontDestroyOnLoad(go); // 可选：如果你想保留跨场景则保留，否则注释掉
             enemyParent = go.transform;
         }
 

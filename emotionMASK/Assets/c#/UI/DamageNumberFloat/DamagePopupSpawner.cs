@@ -32,7 +32,7 @@ public class DamagePopupSpawner : MonoBehaviour
             targetCanvas = canvas;
         }
 
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
 
     /// <summary>

@@ -29,7 +29,7 @@ public static class CheckpointManager
     {
         if (runner != null) return;
         var go = new GameObject("CheckpointManagerRunner");
-        GameObject.DontDestroyOnLoad(go);
+        //GameObject.DontDestroyOnLoad(go);
         runner = go.AddComponent<CheckpointRunner>();
         runner.hideFlags = HideFlags.HideInHierarchy;
     }
