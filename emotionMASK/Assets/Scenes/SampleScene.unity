@@ -19217,7 +19217,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
   m_PivotOffset: {x: 0, y: 0, z: 0}
-  m_AmplitudeGain: 1
+  m_AmplitudeGain: 0
   m_FrequencyGain: 1
   mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!114 &1396053247
@@ -30150,15 +30150,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3498498975202738035, guid: 4253ce29ea73fcb48a567a991f0145e6, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3498498975202738035, guid: 4253ce29ea73fcb48a567a991f0145e6, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8083102289287840202, guid: 4253ce29ea73fcb48a567a991f0145e6, type: 3}
       propertyPath: m_Name
       value: enemyXI
+      objectReference: {fileID: 0}
+    - target: {fileID: 8083102289287840202, guid: 4253ce29ea73fcb48a567a991f0145e6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8333004419754631178, guid: 4253ce29ea73fcb48a567a991f0145e6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -30292,15 +30296,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1086944216852118962, guid: 4e151cce3e2052f41a2a6e22bdc94035, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1086944216852118962, guid: 4e151cce3e2052f41a2a6e22bdc94035, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2365103487571699243, guid: 4e151cce3e2052f41a2a6e22bdc94035, type: 3}
       propertyPath: m_Name
       value: enemyNU
+      objectReference: {fileID: 0}
+    - target: {fileID: 2365103487571699243, guid: 4e151cce3e2052f41a2a6e22bdc94035, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5695211581604306298, guid: 4e151cce3e2052f41a2a6e22bdc94035, type: 3}
       propertyPath: m_LocalPosition.x
@@ -30403,13 +30411,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemyAI
       objectReference: {fileID: 0}
-    - target: {fileID: 6067830457770456996, guid: 92708b4c04a74a54d9daaaf5a2124eb0, type: 3}
-      propertyPath: m_AnchorMax.x
+    - target: {fileID: 2884187813903942364, guid: 92708b4c04a74a54d9daaaf5a2124eb0, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6067830457770456996, guid: 92708b4c04a74a54d9daaaf5a2124eb0, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6067830457770456996, guid: 92708b4c04a74a54d9daaaf5a2124eb0, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6391487100866489927, guid: 92708b4c04a74a54d9daaaf5a2124eb0, type: 3}
       propertyPath: m_Layer
