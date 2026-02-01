@@ -33,6 +33,7 @@ using System.Collections.Generic;
 
 public class RandomStoryTrigger : MonoBehaviour
 {
+
     [Header("剧情库")]
     // 这里是一个列表，可以放 Story A, Story B, Story C...
     public List<StoryChapter> allStories; 
@@ -42,7 +43,7 @@ public class RandomStoryTrigger : MonoBehaviour
     void Start()
     {
         manager = FindObjectOfType<DialogueManager>();
-
+        AudioManager.PlayAudio("8aaae467b0b56976fd840965d3e9ac99_20260131072122");
         if (manager != null && allStories.Count > 0)
         {
             // --- 核心逻辑：随机抽取 ---

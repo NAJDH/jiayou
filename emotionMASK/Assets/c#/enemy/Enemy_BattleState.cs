@@ -45,7 +45,8 @@ public class Enemy_BattleState : EnemyState
             return;
         }
 
-        if (WithinTheAttackDistance() && player != null)
+        // 仅在全局冷却结束后才切换到攻击态
+        if (Time.time >= Enemy_AttackState.nextAllowedAttackTime && WithinTheAttackDistance() && player != null)
             stateMachine.ChangeState(enemybase.attackState);
         else
         {
