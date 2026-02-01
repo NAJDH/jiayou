@@ -3830,7 +3830,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &265071263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8071,7 +8071,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &592521419
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14880,7 +14880,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44fd737d8b6f69846ad14d994da6aa35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyKillMax: 20
+  enemyKillMax: 2
 --- !u!4 &1107280624
 Transform:
   m_ObjectHideFlags: 0
@@ -19757,7 +19757,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
   m_PivotOffset: {x: 0, y: 0, z: 0}
-  m_AmplitudeGain: 0
+  m_AmplitudeGain: 1
   m_FrequencyGain: 1
   mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!114 &1396053247
