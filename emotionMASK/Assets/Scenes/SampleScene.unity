@@ -14900,7 +14900,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44fd737d8b6f69846ad14d994da6aa35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyKillMax: 2
+  enemyKillMax: 8
 --- !u!4 &1107280624
 Transform:
   m_ObjectHideFlags: 0
@@ -15600,7 +15600,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LoveValue: {fileID: 1151487238}
   LoveBarFrame: {fileID: 268820251}
-  maxKills: 20
+  maxKills: 8
 --- !u!1 &1160884365
 GameObject:
   m_ObjectHideFlags: 0
