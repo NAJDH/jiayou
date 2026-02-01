@@ -97,7 +97,6 @@ public class HitStopManager : MonoBehaviour
         // 4. 开启震动协程
         StartCoroutine(DoCameraShake(shakeIntensity, shakeTime));
     }
-
     // 执行顿帧逻辑的协程
     private IEnumerator DoHitStop(float duration)
     {

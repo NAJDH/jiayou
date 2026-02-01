@@ -384,7 +384,7 @@ GameObject:
   - component: {fileID: 247272168617933648}
   - component: {fileID: 3508682914481038144}
   - component: {fileID: 3162880666893493346}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: ATK
   m_TagString: Untagged
   m_Icon: {fileID: 0}

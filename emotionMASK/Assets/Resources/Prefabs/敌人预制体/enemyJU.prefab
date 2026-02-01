@@ -352,7 +352,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6764409941627966087}
   - component: {fileID: 7709484017169676827}
-  m_Layer: 7
+  - component: {fileID: 4590588154294958450}
+  m_Layer: 10
   m_Name: ATK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -409,6 +410,18 @@ CircleCollider2D:
   m_Offset: {x: 4.502942, y: 0}
   serializedVersion: 2
   m_Radius: 5.002942
+--- !u!114 &4590588154294958450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7072262854306263464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfce4e0a0fe971b4eadddb2d6c77905a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8281348287917978725
 GameObject:
   m_ObjectHideFlags: 0

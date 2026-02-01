@@ -84,6 +84,7 @@ public static class playerStateManager
         }
         else
         {
+            AudioManager.PlayAudio("hit");
             return baseDamage;
         }
     }

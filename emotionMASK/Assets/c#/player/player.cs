@@ -55,7 +55,7 @@ public class player : MonoBehaviour
         //     Instance = this;
         // else
         //     Destroy(gameObject);
-
+       
     }
     protected void Start() 
     {
@@ -66,6 +66,7 @@ public class player : MonoBehaviour
         // 重置所有动画事件标志
         animEvent.ResetAnimationEvent();
         animEvent.DisableHitbox();
+        HitStopManager.Instance.TriggerHitStop(0.5f, 2.1f);
     }
     protected void Update() 
     {
